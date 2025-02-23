@@ -1,0 +1,11 @@
+# Archivo de caché de Neovim
+.cache/
+undo/
+swap/
+session/
+plugin/
+
+#Archivos de Lazy.nvim
+lazy-lock.json
+pack/
+site/
