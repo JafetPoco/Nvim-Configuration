@@ -15,5 +15,7 @@ return {
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })        -- Muestra los archivos del buffer de nvim
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })    -- Muestra la documentación de nvim
     vim.keymap.set('n', '<leader>th', builtin.colorscheme, { desc = 'Telescope color scheme' })    -- Muestra los temas disponibles 
+    vim.keymap.set('n', '<leader>co', builtin.git_commits, { desc = 'Telescope git commits' })    -- Muestra la lista de los commits 
+    vim.keymap.set('n', '<leader>br', builtin.git_branches, { desc = 'Telescope git commits' })    -- Muestra las ramas del repositorio git
   end
 }
