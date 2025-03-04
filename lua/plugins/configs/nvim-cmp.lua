@@ -4,10 +4,10 @@ return {
       "hrsh7th/cmp-buffer",    -- Sugerencias de buffer actual
       "hrsh7th/cmp-path",      -- Sugerencias de rutas
       "hrsh7th/cmp-cmdline",   -- Autocompletado en línea de comandos
-    --  "hrsh7th/cmp-nvim-lsp",  -- Integración con LSP
+      "hrsh7th/cmp-nvim-lsp",  -- Integración con LSP
       "hrsh7th/cmp-nvim-lua",  -- Autocompletado para Lua en Neovim
-    --  "L3MON4D3/LuaSnip",      -- Soporte para snippets
-    --  "saadparwaiz1/cmp_luasnip", -- Integración de snippets con cmp
+      "L3MON4D3/LuaSnip",      -- Soporte para snippets
+      "saadparwaiz1/cmp_luasnip", -- Integración de snippets con cmp
     --},
     config = function()
       local cmp = require("cmp")
