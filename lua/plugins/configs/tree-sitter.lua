@@ -11,7 +11,7 @@ return {
       enable = true,  -- Activa el resaltado de sintaxis del Tree-Sitter
     },
     indent = {
-      enable = true -- Habilita identación basada en Tree-Sitter!!!!!
+      enable = false -- Habilita identación basada en Tree-Sitter!!!!!
       --OJO: Ya no hace caso a la identación q le di en el archivo configuración de la carpeta core
     },
     incremental_selection = {
