@@ -20,3 +20,10 @@ require("lazy").setup({
 }, {
   ui = { border = "rounded"}
 })
+
+-- Configuración color del gitSigns
+
+vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#58d68d", bg = "NONE" }) -- Verde brillante
+vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#ffcc00", bg = "NONE" }) -- Amarillo más claro
+vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#ff0000", bg = "NONE" }) -- Rojo fuerte
+
