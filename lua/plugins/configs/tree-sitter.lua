@@ -1,9 +1,11 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  version = "v0.9.2",
   config = function()
-    require("nvim-treesitter.configs").setup({
-      ensure_installed = {"c", "lua"}, -- No instala ningún parser automáticamente
+    local configs = require("nvim-treesitter.configs")
+    configs.setup({
+      ensure_installed = {"c", "lua", "vim", "query"}, -- No instala ningún parser automáticamente
       highlight = { enable = true }, -- Activa el resaltado de sintaxis
       incremental_selection = {
         enable = true,
@@ -13,7 +15,9 @@ return {
           node_decremental = "grm", --Reducir selección al nodo anterior
           scope_incremental = "grc", --Expandir selección al siguiente scope
         },
-      }
+      },
+      sync_install = false,
+      -- enable = false
     })
   end
 }
