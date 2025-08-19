@@ -6,13 +6,7 @@ return {
     local npairs = require('nvim-autopairs')
     local Rule = require("nvim-autopairs.rule")
 
-    npairs.setup({
-      check_ts = true,
-      ts_config = {
-        cpp = { "string" }, -- no autopair dentro de string
-        lua = { "string" },
-      }
-    })
+    npairs.setup({})
 
     npairs.add_rules({ -- Nuevas reglas para c++
       Rule("<", ">", "cpp"),
