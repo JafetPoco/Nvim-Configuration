@@ -1,11 +1,16 @@
 return {
   'nvim-telescope/telescope.nvim', tag = '0.1.8',
 -- or                              , branch = '0.1.x',
-  dependencies = { 'nvim-lua/plenary.nvim' },
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope-ui-select.nvim',
+  },
 
   config = function()
-    -- Configurar Telescope
-    require('telescope').setup({
+    local telescope = require("telescope")
+    local builtin = require("telescope.builtin")
+
+    telescope.setup({
       defaults = {
         layout_strategy = 'horizontal',
         layout_config = {
@@ -16,10 +21,14 @@ return {
         selection_caret = " ",
         path_display = { "smart" },
       },
+
+      extensions = {
+        ["ui-select"] = {
+          require("telescope.themes").get_dropdown {}
+        }
+      }
     })
 
-    -- Definir keymaps
-    local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })  -- Busca archivos rapidamente
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })    -- BUsca texto dentro de un archivo a tiempo real
                                                                                               -- OJO: Requiere que ripgrep (rg) esté instalado.!!!!!!!!!!
@@ -33,6 +42,9 @@ return {
     --vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Archivos modificados en git' })  -- Git status
     vim.keymap.set('n', '<leader>km', builtin.keymaps, { desc = 'Buscar keymaps' })
     vim.keymap.set('n', '<leader>cc', builtin.commands, { desc = 'Buscar comandos' })
+
+
+    telescope.load_extension("ui-select")
 
   end
 }
