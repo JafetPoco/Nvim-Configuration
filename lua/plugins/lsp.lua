@@ -8,15 +8,31 @@ return {
     "hrsh7th/cmp-cmdline",
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
+    "onsails/lspkind.nvim",
   },
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
+    local lspkind = require("lspkind")
 
     cmp.setup({
       snippet = {
         expand = function(args) luasnip.lsp_expand(args.body) end,
       },
+
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentacion = cmp.config.window.bordered(),
+      },
+
+      formatting = {
+        format = lspkind.cmp_format({
+          mode = "symbol_text",
+          maxwidth = 50,
+          ellipsis_char = "...",
+        }),
+      },
+
       mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping.scroll_docs(-4), -- Scroll en la documentacion
         ["<C-f>"] = cmp.mapping.scroll_docs(4), -- Scroll en la documentacion
