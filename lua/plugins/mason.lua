@@ -18,7 +18,12 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim", -- Puente entre mason.nvim y nvim-lspconfig
-    dependencies = { "williamboman/mason.nvim" }, -- Se asegura de que Mason se cargue primero
+    dependencies = {
+      "williamboman/mason.nvim",
+      "neovim/nvim-lspconfig",
+      "hrsh7th/cmp-nvim-lsp",
+    }, -- Se asegura de que Mason se cargue primero
+
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = { "lua_ls", "clangd" }, -- Agrega los servidores LSP que necesites
@@ -33,6 +38,23 @@ return {
         -- Rust	                  rust_analyzer
 
         automatic_installation = true,
+      })
+
+      -- Integración con nvim-cmp (autocompletado)
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      -- Detecta todos los servidores instalados en Mason
+      for _, server in ipairs(require("mason-lspconfig").get_installed_servers()) do
+        vim.lsp.config(server, {
+          capabilities = capabilities,
+        })
+      end
+
+      -- Si algún server necesita config especial, lo sobreescribes
+      vim.lsp.config("lua_ls", {
+        capabilities = capabilities,
+        settings = {
+          Lua = { diagnostics = { globals = { "vim" } } },
+        },
       })
     end
   }
