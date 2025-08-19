@@ -10,7 +10,7 @@ return {
     -- Keymaps globales
     vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle Neo-Tree" })
     vim.keymap.set("n", "<leader>o", ":Neotree focus<CR>",  { desc = "Focus Neo-Tree" })
-    vim.keymap.set("n", "<leader>w", "<C-w>l", { desc = "Volver al código desde Neo-tree" })
+    vim.keymap.set("n", "<leader>l", "<C-w>l", { desc = "Volver al código desde Neo-tree" })
     vim.keymap.set("n", "<leader>r", ":Neotree reveal<CR>", { desc = "Reveal current file" })
     vim.keymap.set("n", "<leader>gs", ":Neotree git_status<CR>", { desc = "Git Status in Neo-Tree" })
 
