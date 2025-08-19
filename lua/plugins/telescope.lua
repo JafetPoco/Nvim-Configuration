@@ -5,7 +5,18 @@ return {
 
   config = function()
     -- Configurar Telescope
-    require('telescope').setup({})
+    require('telescope').setup({
+      defaults = {
+        layout_strategy = 'horizontal',
+        layout_config = {
+          horizontal = { width = 0.7, height = 0.9, preview_width = 0.6},
+        },
+        sorting_strategy = "ascending",
+        prompt_prefix = "   ",
+        selection_caret = " ",
+        path_display = { "smart" },
+      },
+    })
 
     -- Definir keymaps
     local builtin = require('telescope.builtin')
@@ -17,5 +28,11 @@ return {
     vim.keymap.set('n', '<leader>th', builtin.colorscheme, { desc = 'Telescope color scheme' })    -- Muestra los temas disponibles 
     vim.keymap.set('n', '<leader>co', builtin.git_commits, { desc = 'Telescope git commits' })    -- Muestra la lista de los commits 
     vim.keymap.set('n', '<leader>br', builtin.git_branches, { desc = 'Telescope git commits' })    -- Muestra las ramas del repositorio git
+
+    vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Archivos recientes' })  -- Archivos recientes
+    --vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Archivos modificados en git' })  -- Git status
+    vim.keymap.set('n', '<leader>km', builtin.keymaps, { desc = 'Buscar keymaps' })
+    vim.keymap.set('n', '<leader>cc', builtin.commands, { desc = 'Buscar comandos' })
+
   end
 }
