@@ -1,19 +1,52 @@
 return {
 
-	-- Use last-used colorscheme
-	--{
-	--	'rafi/theme-loader.nvim',
-	--	lazy = false,
-	--	priority = 99,
-	--	opts = { initial_colorscheme = 'neohybrid' },
-	--},
+{
+  "catppuccin/nvim",
+  name = "catppuccin",
+  priority = 1000,
+  opts = {
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    integrations = {
+      cmp = true,
+      telescope = true,
+      treesitter = true,
+      navic = true,
+      lualine = true,
+      gitsigns = true,
+    },
+  },
+},
 
-	--{ 'rafi/neo-hybrid.vim', priority = 100, lazy = false },
-	{ 
-    'rafi/awesome-vim-colorschemes',
-     lazy = false,
-     config = function ()
-       vim.cmd.colorscheme("onedark")
-     end
-   },
+{
+  "rose-pine/neovim",
+  name = "rose-pine",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("rose-pine").setup({
+      styles = {
+        bold = true,
+        italic = true,
+      },
+    })
+  end,
+},
+
+{
+  "navarasu/onedark.nvim",
+  priority = 1000,
+  config = function()
+    require("onedark").setup {
+      style = "warm", -- dark, darker, cool, deep, warm, warmer, light
+    }
+    require("onedark").load()
+  end,
+},
+
+{
+  "ellisonleao/gruvbox.nvim",
+  priority = 1000,
+  config = true,
+}
+  
 }

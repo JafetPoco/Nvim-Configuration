@@ -46,12 +46,14 @@ return {
       for _, server in ipairs(require("mason-lspconfig").get_installed_servers()) do
         vim.lsp.config(server, {
           capabilities = capabilities,
+          on_attach = attach_navic,
         })
       end
 
       -- Si algún server necesita config especial, lo sobreescribes
       vim.lsp.config("lua_ls", {
         capabilities = capabilities,
+        on_attach = attach_navic,
         settings = {
           Lua = { diagnostics = { globals = { "vim" } } },
         },

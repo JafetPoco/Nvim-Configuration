@@ -12,3 +12,5 @@ require("lazy").setup({
   { import = "plugins" }, -- Importa todos los archivos de lua/plugins/
 })
 
+require("config.colorscheme")
+
