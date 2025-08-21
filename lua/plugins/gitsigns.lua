@@ -12,18 +12,18 @@ return {
         untracked    = { text = "┆" },
       },
       numhl = true, -- Resalta los números de línea según los cambios
-      linehl = true, -- No resaltar líneas completas
+      linehl = false, -- Resaltar líneas completas
       signcolumn = true, -- Muestra los signos en el margen izquierdo
       watch_gitdir = { interval = 1000 }, -- Refrescar cambios cada segundo
       attach_to_untracked = true, -- No mostrar cambios en archivos no versionados
-      current_line_blame = true, -- Muestra autor y commit en la linea
-      current_line_blame_opts = {
-        virt_text = true,
-        virt_text_pos = "eol",
-        delay = 500,
-        ignore_whitespace = true,
-      },
-      current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
+      current_line_blame = false, -- Muestra autor y commit en la linea
+      -- current_line_blame_opts = {
+      --   virt_text = true,
+      --   virt_text_pos = "eol",
+      --   delay = 500,
+      --   ignore_whitespace = true,
+      -- },
+      -- current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
 
       preview_config = { border = "rounded" }, -- Bordes redondeados en la vista previa
 
