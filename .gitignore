@@ -10,4 +10,4 @@ lazy-lock.json
 pack/
 site/
 
-README.md
+*.txt
