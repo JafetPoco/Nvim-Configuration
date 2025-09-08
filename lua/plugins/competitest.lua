@@ -3,30 +3,36 @@ return {
   dependencies = { "MunifTanjim/nui.nvim" },
   config = function()
     require("competitest").setup({
-      -- 📂 Carpeta donde se guardarán los problemas
+      -- Carpeta donde se guardarán los problemas
       testcases_directory = "testcases",
 
-      -- 📄 Plantilla para tus archivos de competencia
-      -- (puedes crear ~/plantillas/competitiva.cpp con tu setup inicial)
-      template_file = "~/plantillas/competitiva.cpp",
+      -- Plantilla para tus archivos de competencia
+      template_file = vim.fn.expand("~/.config/nvim/lua/plugins/template.cpp"),
 
-      -- ⚙️ Comando para compilar (C++ como ejemplo)
+      -- Comando para compilar (C++ como ejemplo)
       compile_command = {
         cpp = {
           exec = "g++",
-          args = { "-std=c++17", "$(FNAME)", "-o", "$(FNOEXT)" },
+          args = { "-Wall", "-std=c++17", "$(FNAME)", "-o", "$(FNOEXT)" },
         },
+        c = {
+          exec = "gcc",
+          args = {"-Wall", "$(FNAME)", "-o", "$(FNOEXT)"}
+        }
       },
 
-      -- ▶️ Comando para ejecutar
+      -- Comando para ejecutar
       run_command = {
         cpp = { exec = "./$(FNOEXT)" },
+        c = {exec = "./$(FNOEXT)"},
+        python = { exec = "python", args = {"$(FNAME)"}}
       },
 
-      -- 📥 Ruta donde se descargan problemas
+      -- Ruta donde se descargan problemas
       received_problems_path = "$(CWD)/problems",
+      received_files_extension = "cpp",
 
-      -- 🖼️ Configuración de la UI flotante
+      -- Configuración de la UI flotante
       floating_border = "rounded",
       floating_border_highlight = "FloatBorder",
       picker_ui = {
