@@ -61,7 +61,8 @@ Este repositorio contiene mi configuración personalizada de **Neovim**, enfocad
   - [Trouble](#trouble)  
   - [Todo-comments](#todo-comments)  
   - [Window-picker](#window-picker)  
-  - [Competitest](#competitest)  
+  - [Competitest](#competitest)
+  - [ToggleTerm](#toggleTerm)
 
 ---
 
@@ -166,6 +167,13 @@ Este repositorio contiene mi configuración personalizada de **Neovim**, enfocad
 - `<leader>cp` → Descargar problema de Codeforces  
 - `<leader>cc` → Descargar concurso de Codeforces  
 - `<leader>cr` → Ejecutar el programa  
+
+---
+
+### ToggleTerm
+- `<leader>tf` → Mostrar terminal flotante  
+- `<leader>tv` → Mostrar terminal verticalmente  
+- `<leader>th` → Mostrar terminal horizontalmente  
 
 ---
 

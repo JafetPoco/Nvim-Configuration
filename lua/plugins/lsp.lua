@@ -38,7 +38,7 @@ return {
         ["<C-f>"] = cmp.mapping.scroll_docs(4), -- Scroll en la documentacion
         ["<C-Space>"] = cmp.mapping.complete(), -- Abre la ventana de autocompletado
         ["<C-e>"] = cmp.mapping.abort(), -- Cierra ventana de autocompletado
-        ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Acepta la sugerencia
+        ["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Acepta la sugerencia
         ["<Tab>"] = cmp.mapping.select_next_item(),
       }),
       sources = cmp.config.sources({
