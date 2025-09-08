@@ -9,7 +9,7 @@ return {
     npairs.setup({})
 
     npairs.add_rules({ -- Nuevas reglas para c++
-      Rule("<", ">", "cpp"),
+      -- Rule("<", ">", "cpp"),
       Rule("/*", "*/", "cpp"),
     })
 

@@ -4,7 +4,7 @@ return {
   config = function()
     local configs = require("nvim-treesitter.configs")
     configs.setup({
-      ensure_installed = {"c", "lua", "vim", "query"}, -- No instala ningún parser automáticamente
+      ensure_installed = {"lua", "vim", "query"}, -- No instala ningún parser automáticamente
       
       auto_install = false, -- Si está en True, se instala el lenguage que detecte autoamticamente
 
