@@ -99,7 +99,7 @@ Este repositorio contiene mi configuración personalizada de **Neovim**, enfocad
 - `<leader>fb` → Buffers abiertos  
 - `<leader>fr` → Archivos recientes  
 - `<leader>fh` → Documentación de Nvim  
-- `<leader>th` → Temas disponibles  
+- `<leader>ft` → Temas disponibles  
 - `<leader>gs` → Archivos en `git status`  
 - `<leader>co` → Commits  
 - `<leader>br` → Ramas  

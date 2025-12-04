@@ -10,17 +10,19 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 template<typename... Args> 
-void print(const Args&... args) {((cout<<args<<" "),...);}
+void print(const Args&... args) {((cout<<args),...);}
 template<typename... Args>
 void read(Args&... args) {(cin>>...>>args);}
-#define eol '\n'
 #define rep(i, a, b) for (int i = a; i < (b); ++i)
 #define per(i, a, b) for (int i = a; i >= (b); --i)
 #define foreach(i,v) for (auto& i: v)
 #define fillv(v) foreach(i,v){read(i);}
+#define yes "YES\n"
+#define no "NO\n"
 
 void solve() {
-
+  int n;
+  read(n);
 }
 
 int main() {
@@ -28,7 +30,7 @@ int main() {
   cin.tie(0);
 
   int t = 1;
-  // cin >> t;
+  cin >> t;
   while (t--) {
     solve();
   }
