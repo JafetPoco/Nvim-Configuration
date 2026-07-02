@@ -75,13 +75,10 @@ Este repositorio contiene mi configuración personalizada de **Neovim**, enfocad
 ---
 
 ### Comentarios
-- `<leader>v` → Comentar/Descomentar línea  
-- `<leader>V` → Comentar/Descomentar bloque  
-- `gcO` → Insertar comentario en nueva línea arriba  
-- `gco` → Insertar comentario en nueva línea abajo  
-- `gcA` → Comentar al final de la línea  
-- `gcc` → Comentar/Descomentar línea actual  
-- `[count]gcc` → Comentar varias líneas  
+- `<leader>/` → Comentar/Descomentar línea  
+- `<leader>vip` → Comentar/Descomentar parrafo
+- `<leader>v5j` → Comentar/Descomentar 5 lineas hacia abajo
+- `<leader>v5k` → Comentar/Descomentar 5 lineas hacia arriba
 
 ---
 
@@ -180,4 +177,19 @@ Este repositorio contiene mi configuración personalizada de **Neovim**, enfocad
 ## 📌 Notas
 - Todos los atajos están organizados por categorías.  
 - Se recomienda instalar **Nerd Fonts** para mejor visualización de iconos.  
-- Compatible con **Neovim >= 0.9**.  
+- Compatible con **Neovim >= 0.9**. 
+- En caso no funcione el copiado/pegado de portapapeles, posible solucion:
+
+1. diagnosticar problema:
+:checkhealth clipboard
+2. Si aparece `NOT FOUND` falta instalar el puente:
+3. Detectar servidor gráfico:
+echo $XDG_SESSION_TYPE
+4. si es xclip o xsel instalar:
+sudo pacman -S xclip
+5. si es Wayland aplica:
+sudo pacman -S wl-clipboard
+6. verificar q en la configuracion de nvim este activo:
+-- Para init.lua
+vim.opt.clipboard = "unnamedplus"
+
